@@ -1,5 +1,8 @@
 # Football APP
 
+Link to the app: https://d18129378.github.io/AngularLab7/
+Link to REPO: https://github.com/D18129378/AngularLab7
+
 This project is a straightforward Angular application with a football team theme. It offers a roster of well-known football teams, enabling users to:
 
 1- Enter the name of a team in the search field in order to browse the list of teams.
