@@ -1,27 +1,44 @@
-# Lab7
+# Football APP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+This project is a straightforward Angular application with a football team theme. It offers a roster of well-known football teams, enabling users to:
 
-## Development server
+1- Enter the name of a team in the search field in order to browse the list of teams.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2- By providing information about the team, such as its name, nation, and year of foundation, new teams can be added to the list. 
 
-## Code scaffolding
+Within a stand-alone component design, this application showcases fundamental Angular features like data binding, event handling, template-driven forms, and dynamic filtering.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Features: 
 
-## Build
+1. Search Function feature
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The serch function enables users to enter a query in the search field to filter teams of football. The list of teams dynamically changes as they type, displaying just the teams that corespond to the input.
 
-## Running unit tests
+Angular Conept:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Two-Way Data Binding ([(ngModel)]): This method records user input in real time by binding the searchText variable to the input field.
 
-## Running end-to-end tests
+- Event Binding (input)): The teams are filtered according to searchText by the filterTeams() method, which is called on each input event in the search box.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Logic for Filtering: The filterTeams() method updates filteredTeams, which shows the teams that match in the users interface, by using the filter() function to search through the teams array.
 
-## Further help
+2. The Form Feature
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Users can add new football teams to the list by filling out a form at the top of the app, which asks for the team's name, nation, and year of establishment. Before permitting submission, the form makes sure that evry field is filled out.
+
+Angular Concepts:
+- Template-Driven Form: [(ngModel)] is used to bind each input field (team name, country, and founding year) to component properties (newTeamName, newTeamCountry, and newTeamFounded). 
+
+- Form validation is provided by the needed property on each form field, which makes sure that users cannoot submit the form with any fields left empty.
+
+- Form Submssion (ngSubmit): When the form is submitted, the addTeam() method is called since it is encapsulated in a ngSubmit directive.
+
+- Dynamic Data Addition: The addTeam() method displaya the new team in the list after adding it to the array and refreshing the filteredTeams.
+
+# Other features
+
+- Component-Based Architecture: Angular's standalone component method, which permits direct imports of required modues without a roat module, is demonstrated by the app's construction utilising a standalone AppComponent.
+
+- Directives and Dynamic Display: The list of teams is in time rendered using Angular's *ngFor directive, and conditional material, such as a message if no teams match the search, may be shown using *ngIf.
+
+- Styling and User Interface: To improved the app's desin and user experience, basic CSS styling is adds to the form, search field, and team cards.
